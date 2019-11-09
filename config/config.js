@@ -38,7 +38,7 @@ const plugins = [
         : false, // default close dll, because issue https://github.com/ant-design/ant-design-pro/issues/4665
       // dll features https://webpack.js.org/plugins/dll-plugin/
       // dll: {
-      //   include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
+      //   include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch', 'antd', 'react', 'react-dom', 'umi'],
       //   exclude: ['@babel/runtime', 'netlify-lambda'],
       // },
     },
@@ -112,6 +112,11 @@ export default {
               name: 'welcome',
               icon: 'smile',
               component: './Welcome',
+            },
+            {
+              path: '/test',
+              name: 'test',
+              component: './Test/Test',
             },
             {
               component: './404',

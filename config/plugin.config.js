@@ -27,6 +27,15 @@ function getModulePackageName(module) {
 }
 
 export default config => {
+  // dev env proxy
+  if (process.env.NODE_ENV !== 'production') {
+    config.devServer.proxy({
+      '/api': {
+        target: 'http://localhost:3001/',
+        changeOrigin: true,
+      },
+    });
+  }
   // preview.pro.ant.design only do not use in your production;
   if (
     process.env.ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site' ||
